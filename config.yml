@@ -1,0 +1,16 @@
+version: '2.1'
+orbs:
+  accelq-connect: accelq/accelq-connect@1.0.0
+workflows:
+  use-my-orb:
+    jobs:
+      - accelq-connect/accelq-ci:
+          agentName: POC
+          apiKey: XyzAvsdfwe2322sdf
+          jobId: '1'
+          proxyHost: localhost
+          proxyPort: '9090'
+          runparams: '{"username": "john todd", "userID": 2}'
+          tenantCode: demotenant
+          url: https://poc.accelq.io
+          userId: vivekop@yopmail.com
