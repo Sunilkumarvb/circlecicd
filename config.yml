@@ -13,4 +13,4 @@ workflows:
           runparams: '{"username": "john todd", "userID": 2}'
           tenantCode: demotenant
           url: https://poc.accelq.io
-          userId: vivekop@yopmail1.com
+          userId: vivekop@yopmail.com
