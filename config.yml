@@ -1,23 +1,15 @@
-version: '2.1'
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
 - task: aqciconnect@2
+  displayName: 'Run ACCELQ Automation'
   inputs:
     appURL: 'https://poc.accelq.io/'
     userName: 'sunilkumar.bhuvin@accelq.com'
-    apiKey: 'vpkDVzAX-JRqzk9K3aWxiDbpwa30S5V2U3205PjuKsI'
+    apiKey: '$(ACCELQ_API_KEY)'
     tenantCode: 'accelqtraining'
     jobId: '105615'
-orbs:
-  accelq-connect: accelq/accelq-connect@1.0.0
-workflows:
-  use-my-orb:
-    jobs:
-      - accelq-connect/accelq-ci:
-          agentName: POC
-          apiKey: XyzAvsdfwe2322sdf
-          jobId: '1'
-          proxyHost: localhost
-          proxyPort: '9090'
-          runparams: '{"username": "john todd", "userID": 2}'
-          tenantCode: demotenant
-          url: https://poc.accelq.io
-          userId: vivekop@yopmail1.com
